@@ -27,6 +27,7 @@ Also the following -D flags will need to be uncommented and properly set (on mas
 vmparam -DGridGainComputePlugin.configFile="C:\Programs\HEC-WAT\HEC-WAT\ignite\default-config.xml"
 
 #for master node: comment out the following line if this is master node
+
 #vmparam -Djava.rmi.server.hostname=127.0.0.1
 
 
