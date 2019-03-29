@@ -20,4 +20,4 @@ Develop USACE’s primary integration tool for engineering and water resources s
 
 **Documentation Linkages**
 
--[Distributed Compute Configurations](\DistributedComputeConfigurations.md)
+-[Distributed Compute Configurations](DistributedComputeConfiguration.md)
