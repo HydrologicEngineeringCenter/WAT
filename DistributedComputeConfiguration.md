@@ -1,4 +1,5 @@
-Distributed Computing Configurations:
+**Distributed Computing Configurations:**
+
 There are many different configuration considerations when developing a distributed compute.
 Managing Multiple Masters with separable compute node grids:
 In order to have multiple masters compute on the same network each using a distinct mapping of compute nodes the following settings need to be changed in the default-config.xml file in the ignite directory packaged with WAT on the master node and each compute node. We recommend that the multi-cast options be utilized and that different port numbers be associated with each compute node grid and master pairing.
