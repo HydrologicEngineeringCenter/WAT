@@ -20,6 +20,6 @@ Develop USACE’s primary integration tool for engineering and water resources s
 
 **Documentation Linkages**
 
--[Distributed Compute Configurations](DistributedComputeConfiguration.md)
--[SDI Documentations](https://hydrologicengineeringcenter.github.io/SDI/)
+- [Distributed Compute Configurations](DistributedComputeConfiguration.md)
+- [SDI Documentations](https://hydrologicengineeringcenter.github.io/SDI/)
 
