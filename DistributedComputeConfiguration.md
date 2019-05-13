@@ -43,7 +43,8 @@ Another alternative method is to use TcpDiscoverySpi – which allows for a stat
             <bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.vm.TcpDiscoveryVmIpFinder">
               <property name="addresses">
                 <list>
-                  <value>155.83.203.43:47500</value>
+                  <!-- replace XXX.XX.XXX.XX:PPPPP with your actual IP:port.-->
+                  <value>XXX.XX.XXX.XX:PPPPP</value>
                 </list>
               </property>
             </bean>
