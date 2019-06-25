@@ -1,241 +1,225 @@
 Creating a WAT Model Plug-in
-
-**DRAFT DOCUMENT**
-
 **June 2019**
-
-**  
-**Creating a WAT Model Plug-in
-
-Draft Document
 
 TABLE OF CONTENTS
 
-[1. WAT Plug-ins 8](#wat-plug-ins)
+[1. WAT Plug-ins](#wat-plug-ins)
 
-[1.1 Background 8](#background)
+[1.1 Background](#background)
 
-[1.2 Overview 8](#overview)
+[1.2 Overview](#overview)
 
-[1.2.1 Common Base Classes 8](#common-base-classes)
+[1.2.1 Common Base Classes](#common-base-classes)
 
-[1.3 Plug-in Concept 11](#plug-in-concept)
+[1.3 Plug-in Concept](#plug-in-concept)
 
-[1.3.1 Plug-in Interfaces 12](#plug-in-interfaces)
+[1.3.1 Plug-in Interfaces](#plug-in-interfaces)
 
-[1.3.2 SimplePlugin 13](#simpleplugin)
+[1.3.2 SimplePlugin](#simpleplugin)
 
-[1.3.3 WatPlugin 13](#watplugin)
+[1.3.3 WatPlugin](#watplugin)
 
-[1.3.4 DisplayableWatPlugin 13](#displayablewatplugin)
+[1.3.4 DisplayableWatPlugin](#displayablewatplugin)
 
-[1.3.5 Java Program Plug-in 13](#java-program-plug-in)
+[1.3.5 Java Program Plug-in](#java-program-plug-in)
 
-[1.3.6 Self-Contained Plug-ins 14](#self-contained-plug-ins)
+[1.3.6 Self-Contained Plug-ins](#self-contained-plug-ins)
 
-[1.4 Implementing Interfaces 14](#implementing-interfaces)
+[1.4 Implementing Interfaces](#implementing-interfaces)
 
-[1.4.1 Plug-ins containing all of their computational logic
-14](#plug-ins-containing-all-of-their-computational-logic)
+[1.4.1 Plug-ins containing all of their computational logic](#plug-ins-containing-all-of-their-computational-logic)
 
-[1.4.2 Plug-ins for programs that run outside of the WAT process
-15](#plug-ins-for-programs-that-run-outside-of-the-wat-process)
+[1.4.2 Plug-ins for programs that run outside of the WAT process](#plug-ins-for-programs-that-run-outside-of-the-wat-process)
 
-[1.5 Plug-in startup process 17](#plug-in-startup-process)
+[1.5 Plug-in startup process](#plug-in-startup-process)
 
-[1.5.1 Plug-in Jar file location 17](#plug-in-jar-file-location)
+[1.5.1 Plug-in Jar file location](#plug-in-jar-file-location)
 
-[1.5.2 Plug-in Entry Method 17](#plug-in-entry-method)
+[1.5.2 Plug-in Entry Method](#plug-in-entry-method)
 
-[1.5.3 Jar File Manifest Entry 17](#jar-file-manifest-entry)
+[1.5.3 Jar File Manifest Entry](#jar-file-manifest-entry)
 
-[1.5.4 Plug-in initialization 17](#plug-in-initialization)
+[1.5.4 Plug-in initialization](#plug-in-initialization)
 
-[1.5.5 WatPlugin Manager 18](#watplugin-manager)
+[1.5.5 WatPlugin Manager](#watplugin-manager)
 
-[2. Examples 18](#examples)
+[2. Examples](#examples)
 
-[2.1 Debugging Plug-ins through Netbeans and HEC-WAT
-20](#debugging-plug-ins-through-netbeans-and-hec-wat)
+[2.1 Debugging Plug-ins through Netbeans and HEC-WAT](#debugging-plug-ins-through-netbeans-and-hec-wat)
 
-[2.2 Simple Plug-in Example 23](#simple-plug-in-example)
+[2.2 Simple Plug-in Example](#simple-plug-in-example)
 
-[2.3 Simple Computable Plug-in 37](#simple-computable-plug-in)
+[2.3 Simple Computable Plug-in](#simple-computable-plug-in)
 
-[2.4 Hydrologic Event Generator Plug-in
-64](#hydrologic-event-generator-plug-in)
+[2.4 Hydrologic Event Generator Plug-in](#hydrologic-event-generator-plug-in)
 
-[2.5 Output Variable Tracking 66](#output-variable-tracking)
+[2.5 Output Variable Tracking](#output-variable-tracking)
 
-[3. Plug-in API 69](#plug-in-api)
+[3. Plug-in API](#plug-in-api)
 
-[3.1 Plug-in Interfaces & Class 69](#plug-in-interfaces-class)
+[3.1 Plug-in Interfaces & Class](#plug-in-interfaces-class)
 
-[3.1.1 Interfaces Overview 69](#interfaces-overview)
+[3.1.1 Interfaces Overview](#interfaces-overview)
 
-[3.1.2 SimplePlugin 69](#simpleplugin-1)
+[3.1.2 SimplePlugin](#simpleplugin-1)
 
-[3.1.3 ComputablePlugin 69](#computableplugin)
+[3.1.3 ComputablePlugin](#computableplugin)
 
-[3.1.4 WatPlugin 70](#watplugin-1)
+[3.1.4 WatPlugin](#watplugin-1)
 
-[3.1.5 DisplayableWatPlugin 70](#displayablewatplugin-1)
+[3.1.5 DisplayableWatPlugin](#displayablewatplugin-1)
 
-[3.1.6 Java Program Plug-in 70](#java-program-plug-in-2)
+[3.1.6 Java Program Plug-in](#java-program-plug-in-2)
 
-[3.1.7 Self-Contained Plug-ins 70](#self-contained-plug-ins-1)
+[3.1.7 Self-Contained Plug-ins](#self-contained-plug-ins-1)
 
-[4. Map Drawing 71](#map-drawing)
+[4. Map Drawing](#map-drawing)
 
-[4.1 Graphic Elements 71](#graphic-elements)
+[4.1 Graphic Elements](#graphic-elements)
 
-[5. Model Linking 73](#model-linking)
+[5. Model Linking](#model-linking)
 
-[5.1 Data Locations 73](#data-locations)
+[5.1 Data Locations](#data-locations)
 
-[5.2 Dynamic Model Linking 73](#dynamic-model-linking)
+[5.2 Dynamic Model Linking](#dynamic-model-linking)
 
-[6. Compute 73](#compute)
+[6. Compute](#compute)
 
-[6.1 Passing Information to the Plugin
-73](#passing-information-to-the-plugin)
+[6.1 Passing Information to the Plugin](#passing-information-to-the-plugin)
 
-[6.2 DSS F-Part 74](#dss-f-part)
+[6.2 DSS F-Part](#dss-f-part)
 
-[6.2.1 FRA DSS F-Part 74](#fra-dss-f-part)
+[6.2.1 FRA DSS F-Part](#fra-dss-f-part)
 
-[6.3 F-Part Replacement 74](#f-part-replacement)
+[6.3 F-Part Replacement](#f-part-replacement)
 
-[6.3.1 Example of F-Part Replacement 74](#example-of-f-part-replacement)
+[6.3.1 Example of F-Part Replacement](#example-of-f-part-replacement)
 
-[6.3.2 Dynamic Linking 74](#dynamic-linking)
+[6.3.2 Dynamic Linking](#dynamic-linking)
 
-[6.4 FRA F-Part Replacement 75](#fra-f-part-replacement)
+[6.4 FRA F-Part Replacement](#fra-f-part-replacement)
 
-[7. FRA Related Classes and Interfaces
-75](#fra-related-classes-and-interfaces)
+[7. FRA Related Classes and Interfaces](#fra-related-classes-and-interfaces)
 
-[7.1 Convergence Variables 75](#convergence-variables)
+[7.1 Convergence Variables](#convergence-variables)
 
-[7.2 Save Output Flags 75](#save-output-flags)
+[7.2 Save Output Flags](#save-output-flags)
 
-[7.3 Performance Metric’s Plug-ins 75](#performance-metrics-plug-ins)
+[7.3 Performance Metric’s Plug-ins](#performance-metrics-plug-ins)
 
-[8. Appendix 76](#appendix)
+[8. Appendix](#appendix)
 
-[8.1 Plug-in Interface and Class Methods
-76](#plug-in-interface-and-class-methods)
+[8.1 Plug-in Interface and Class Methods](#plug-in-interface-and-class-methods)
 
-[8.1.1 SimplePlugin 76](#simpleplugin-2)
+[8.1.1 SimplePlugin](#simpleplugin-2)
 
-[8.1.2 WatPlugin 80](#watplugin-2)
+[8.1.2 WatPlugin](#watplugin-2)
 
-[8.1.3 ComputablePlugin 81](#computableplugin-1)
+[8.1.3 ComputablePlugin](#computableplugin-1)
 
-[8.1.4 DisplayablePlugin 84](#displayableplugin)
+[8.1.4 DisplayablePlugin](#displayableplugin)
 
-[8.1.5 DisplayableWatPlugin 87](#displayablewatplugin-2)
+[8.1.5 DisplayableWatPlugin](#displayablewatplugin-2)
 
-[8.1.6 BackgroundImportPlugin 88](#backgroundimportplugin)
+[8.1.6 BackgroundImportPlugin](#backgroundimportplugin)
 
-[8.1.7 ClientServerPlugin 88](#clientserverplugin)
+[8.1.7 ClientServerPlugin](#clientserverplugin)
 
-[8.1.8 CreatablePlugin 89](#creatableplugin)
+[8.1.8 CreatablePlugin](#creatableplugin)
 
-[8.1.9 DynamicLinkagePlugin 90](#dynamiclinkageplugin)
+[8.1.9 DynamicLinkagePlugin](#dynamiclinkageplugin)
 
-[8.1.10 HydrologicEventPlugin 90](#hydrologiceventplugin)
+[8.1.10 HydrologicEventPlugin](#hydrologiceventplugin)
 
-[8.1.11 IndependentComputablePlugin 90](#independentcomputableplugin)
+[8.1.11 IndependentComputablePlugin](#independentcomputableplugin)
 
-[8.1.12 NonInteractiveImportablePlugin
-90](#noninteractiveimportableplugin)
+[8.1.12 NonInteractiveImportablePlugin](#noninteractiveimportableplugin)
 
-[8.1.13 OutputPlugin 91](#outputplugin)
+[8.1.13 OutputPlugin](#outputplugin)
 
-[8.1.14 RestartableComputePlugin 92](#restartablecomputeplugin)
+[8.1.14 RestartableComputePlugin](#restartablecomputeplugin)
 
-[8.1.15 SaveProjectAsPlugin 93](#saveprojectasplugin)
+[8.1.15 SaveProjectAsPlugin](#saveprojectasplugin)
 
-[8.1.16 SelfContainedPlugin 93](#selfcontainedplugin)
+[8.1.16 SelfContainedPlugin](#selfcontainedplugin)
 
-[8.1.17 TimeWindowIntervalPlugin 94](#timewindowintervalplugin)
+[8.1.17 TimeWindowIntervalPlugin](#timewindowintervalplugin)
 
-[8.2 Performance Metric Plug-in 94](#performance-metric-plug-in)
+[8.2 Performance Metric Plug-in](#performance-metric-plug-in)
 
-[8.2.1 PMComputePlugin 94](#pmcomputeplugin)
+[8.2.1 PMComputePlugin](#pmcomputeplugin)
 
-[8.2.2 PMComputeAlternative 96](#pmcomputealternative)
+[8.2.2 PMComputeAlternative](#pmcomputealternative)
 
-[8.3 Additional Classes 100](#additional-classes)
+[8.3 Additional Classes](#additional-classes)
 
-[8.3.1 ComputeProgressListener 100](#computeprogresslistener)
+[8.3.1 ComputeProgressListener](#computeprogresslistener)
 
-[8.3.2 ComputeOptions 103](#computeoptions)
+[8.3.2 ComputeOptions](#computeoptions)
 
-[8.3.3 DataLocation 118](#datalocation)
+[8.3.3 DataLocation](#datalocation)
 
-[8.3.4 FileDataLocation 126](#filedatalocation)
+[8.3.4 FileDataLocation](#filedatalocation)
 
-[8.4 DataLocationUtilities 127](#datalocationutilities)
+[8.4 DataLocationUtilities](#datalocationutilities)
 
-[8.4.1 EditActionImpl 130](#editactionimpl)
+[8.4.1 EditActionImpl](#editactionimpl)
 
-[8.4.2 GraphicElement 133](#graphicelement)
+[8.4.2 GraphicElement](#graphicelement)
 
-[8.4.3 MessageTaker 140](#messagetaker)
+[8.4.3 MessageTaker](#messagetaker)
 
-[8.4.4 ModelAlternative 141](#modelalternative)
+[8.4.4 ModelAlternative](#modelalternative)
 
-[8.4.5 OutputElementImpl 141](#outputelementimpl)
+[8.4.5 OutputElementImpl](#outputelementimpl)
 
-[8.4.6 ProgramOrderItem 145](#programorderitem)
+[8.4.6 ProgramOrderItem](#programorderitem)
 
-[8.4.7 Project 145](#project)
+[8.4.7 Project](#project)
 
-[8.4.8 WatPluginManager 170](#watpluginmanager)
+[8.4.8 WatPluginManager](#watpluginmanager)
 
 LIST OF FIGURES
 
-[Figure 1 Base Plug-in classes 11](#_Toc11049855)
+[Figure 1 Base Plug-in classes](#_Toc11049855)
 
-[Figure 2 Base Server-side classes 11](#_Toc11049856)
+[Figure 2 Base Server-side classes](#_Toc11049856)
 
-[Figure 3 WAT Plug-in Interfaces 13](#_Toc11049857)
+[Figure 3 WAT Plug-in Interfaces](#_Toc11049857)
 
-[Figure 4 Plug-in Interfaces 15](#_Toc11049858)
+[Figure 4 Plug-in Interfaces](#_Toc11049858)
 
-[Figure 5 Design for Java-based programs 16](#_Toc11049859)
+[Figure 5 Design for Java-based programs](#_Toc11049859)
 
-[Figure 6 Non-Java Plugin 16](#_Toc11049860)
+[Figure 6 Non-Java Plugin](#_Toc11049860)
 
-[Figure 7 Non Java Plugin 16](#_Toc11049861)
+[Figure 7 Non Java Plugin](#_Toc11049861)
 
-[Figure 8 Plugin Decision Logic 19](#_Toc11049862)
+[Figure 8 Plugin Decision Logic](#_Toc11049862)
 
-[Figure 9 The HEC-WAT.config file 20](#_Toc11049863)
+[Figure 9 The HEC-WAT.config file](#_Toc11049863)
 
-[Figure 10 Attaching the debugger 21](#_Toc11049864)
+[Figure 10 Attaching the debugger](#_Toc11049864)
 
-[Figure 11 Attach Debugger Settings 21](#_Toc11049865)
+[Figure 11 Attach Debugger Settings](#_Toc11049865)
 
-[Figure 12 Opening a New Project 24](#_Toc11049866)
+[Figure 12 Opening a New Project](#_Toc11049866)
 
-[Figure 13 The New Project Wizard 24](#_Toc11049867)
+[Figure 13 The New Project Wizard](#_Toc11049867)
 
-[Figure 14 Creating a New Project 25](#_Toc11049868)
+[Figure 14 Creating a New Project](#_Toc11049868)
 
-[Figure 15 The Properties Node 27](#_Toc11049869)
+[Figure 15 The Properties Node](#_Toc11049869)
 
-[Figure 16 The Properties Editor 27](#_Toc11049870)
+[Figure 16 The Properties Editor](#_Toc11049870)
 
-[Figure 17 Adding jars 28](#_Toc11049871)
+[Figure 17 Adding jars](#_Toc11049871)
 
-[Figure 18 Selecting jdom-1.0.jar 28](#_Toc11049872)
+[Figure 18 Selecting jdom-1.0.jar](#_Toc11049872)
 
-[Figure 19 Project Properties with selected jars 29](#_Ref5016528)
+[Figure 19 Project Properties with selected jars](#_Ref5016528)
 
-[Figure 20 Mapper Result 36](#_Toc11049874)
+[Figure 20 Mapper Result](#_Toc11049874)
 
 [Figure 21 Creating a new NetBeans project 38](#_Toc11049875)
 
