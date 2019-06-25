@@ -221,172 +221,157 @@ LIST OF FIGURES
 
 [Figure 20 Mapper Result](#_Toc11049874)
 
-[Figure 21 Creating a new NetBeans project 38](#_Toc11049875)
+[Figure 21 Creating a new NetBeans project](#_Toc11049875)
 
-[Figure 22 The NetBeans New Project Wizard 39](#_Toc11049876)
+[Figure 22 The NetBeans New Project Wizard](#_Toc11049876)
 
-[Figure 23 Creating a project 40](#_Toc11049877)
+[Figure 23 Creating a project](#_Toc11049877)
 
-[Figure 24 A New Project in NetBeans 40](#_Ref1051432)
+[Figure 24 A New Project in NetBeans](#_Ref1051432)
 
-[Figure 25 Opening the Properties Editor 41](#_Toc11049879)
+[Figure 25 Opening the Properties Editor](#_Toc11049879)
 
-[Figure 26 The Project Properties Editor 41](#_Toc11049880)
+[Figure 26 The Project Properties Editor](#_Toc11049880)
 
-[Figure 27 Adding jars 42](#_Toc11049881)
+[Figure 27 Adding jars](#_Toc11049881)
 
-[Figure 28 Adding jdom-1.0.jar 42](#_Toc11049882)
+[Figure 28 Adding jdom-1.0.jar](#_Toc11049882)
 
-[Figure 29 Project Properties example 43](#_Ref1051499)
+[Figure 29 Project Properties example](#_Ref1051499)
 
-[Figure 30 Creating a Class 44](#_Toc11049884)
+[Figure 30 Creating a Class](#_Toc11049884)
 
-[Figure 31 The New Java Class Wizard 44](#_Toc11049885)
+[Figure 31 The New Java Class Wizard](#_Toc11049885)
 
-[Figure 32 Basic WAT Plug-in Interfaces 69](#_Toc11049886)
+[Figure 32 Basic WAT Plug-in Interfaces](#_Toc11049886)
 
-[Figure 33 Plugin classes 71](#_Toc11049887)
+[Figure 33 Plugin classes](#_Toc11049887)
 
-[Figure 34 Graphic Elements Class Relationship 72](#_Toc11049888)
+[Figure 34 Graphic Elements Class Relationship](#_Toc11049888)
 
-LIST OF CODE EXAMPLES
+LIST OF CODE EXAMPLE IMAGES
 
-[Code Example 1 The debug line 22](#_Toc11049889)
+[Code Example 1 The debug line](#_Toc11049889)
 
-[Code Example 2 Stopping at the Debug Line 23](#_Toc11049890)
+[Code Example 2 Stopping at the Debug Line](#_Toc11049890)
 
-[Code Example 3 MapperPlugin.java 26](#_Toc11049891)
+[Code Example 3 MapperPlugin.java](#_Toc11049891)
 
-[Code Example 4 Extending AbstractPlugin from the hec2.plugin Package
-30](#_Toc11049892)
+[Code Example 4 Extending AbstractPlugin from the hec2.plugin Package](#_Toc11049892)
 
-[Code Example 5 Adding Static Variables 31](#_Toc11049893)
+[Code Example 5 Adding Static Variables](#_Toc11049893)
 
-[Code Example 6 MapperPlugin Constructor 31](#_Toc11049894)
+[Code Example 6 MapperPlugin Constructor](#_Toc11049894)
 
-[Code Example 7 Additional MapperPlugin Initialization
-32](#_Toc11049895)
+[Code Example 7 Additional MapperPlugin Initialization](#_Toc11049895)
 
-[Code Example 8 Definiing Executable path 32](#_Toc11049896)
+[Code Example 8 Definiing Executable path](#_Toc11049896)
 
-[Code Example 9 Implementing isAppIppInstalled() 33](#_Toc11049897)
+[Code Example 9 Implementing isAppIppInstalled()](#_Toc11049897)
 
-[Code Example 10 Implementing getApplicationPath() 33](#_Toc11049898)
+[Code Example 10 Implementing getApplicationPath()](#_Toc11049898)
 
-[Code Example 11 Implementing displayApplication() 34](#_Toc11049899)
+[Code Example 11 Implementing displayApplication()](#_Toc11049899)
 
-[Code Example 12 Adding Process member 34](#_Toc11049900)
+[Code Example 12 Adding Process member](#_Toc11049900)
 
-[Code Example 13 Implementing close( ) 34](#_Toc11049901)
+[Code Example 13 Implementing close( )](#_Toc11049901)
 
-[Code Example 14 Determining the shapefile list in the map window
-35](#_Toc11049902)
+[Code Example 14 Determining the shapefile list in the map window](#_Toc11049902)
 
-[Code Example 15 Implementing openProject() and createProject()
-36](#_Toc11049903)
+[Code Example 15 Implementing openProject() and createProject()](#_Toc11049903)
 
-[Code Example 16 Implementing getProjectName(), saveProject(),
-getLogFile() 37](#_Toc11049904)
+[Code Example 16 Implementing getProjectName(), saveProject(),getLogFile()](#_Toc11049904)
 
-[Code Example 17 Implementing getVersion(), getDirectory()
-37](#_Toc11049905)
+[Code Example 17 Implementing getVersion(), getDirectory()](#_Toc11049905)
 
-[Code Example 18 Importing namespaces 45](#_Toc11049906)
+[Code Example 18 Importing namespaces](#_Toc11049906)
 
-[Code Example 19 BasicPlugin Class 45](#_Toc11049907)
+[Code Example 19 BasicPlugin Class](#_Toc11049907)
 
-[Code Example 20 Initializing the BasicPlugin 46](#_Toc11049908)
+[Code Example 20 Initializing the BasicPlugin](#_Toc11049908)
 
-[Code Example 21 The BasicPlugin constructor 47](#_Toc11049909)
+[Code Example 21 The BasicPlugin constructor](#_Toc11049909)
 
-[Code Example 22 BasicPlugin main() 47](#_Toc11049910)
+[Code Example 22 BasicPlugin main()](#_Toc11049910)
 
-[Code Example 23 Implementing getAltFileExtension(),
-getPluginDirectory(), getVersion() 48](#_Toc11049911)
+[Code Example 23 Implementing getAltFileExtension(),getPluginDirectory(), getVersion()](#_Toc11049911)
 
-[Code Example 24 Defining the DataLocations List 49](#_Toc11049912)
+[Code Example 24 Defining the DataLocations List](#_Toc11049912)
 
-[Code Example 25 Defining XML elements 49](#_Toc11049913)
+[Code Example 25 Defining XML elements](#_Toc11049913)
 
-[Code Example 26 Saving Alternative to XML 50](#_Toc11049914)
+[Code Example 26 Saving Alternative to XML](#_Toc11049914)
 
-[Code Example 27 Loading an Alternative from XML 51](#_Toc11049915)
+[Code Example 27 Loading an Alternative from XML](#_Toc11049915)
 
-[Code Example 28 Implementing saveProject() 52](#_Toc11049916)
+[Code Example 28 Implementing saveProject()](#_Toc11049916)
 
-[Code Example 29 Creating a New Alternative 52](#_Toc11049917)
+[Code Example 29 Creating a New Alternative](#_Toc11049917)
 
-[Code Example 30 BasicPluginI18n class 53](#_Toc11049918)
+[Code Example 30 BasicPluginI18n class](#_Toc11049918)
 
-[Code Example 31 The BasicPluginMessages class 54](#_Toc11049919)
+[Code Example 31 The BasicPluginMessages class](#_Toc11049919)
 
-[Code Example 32 Creating a Properties File 54](#_Toc11049920)
+[Code Example 32 Creating a Properties File](#_Toc11049920)
 
-[Code Example 33 BasicAlternativeFactory Contructor 55](#_Toc11049921)
+[Code Example 33 BasicAlternativeFactory Contructor](#_Toc11049921)
 
-[Code Example 34 Methods to create new Alternatives 55](#_Toc11049922)
+[Code Example 34 Methods to create new Alternatives](#_Toc11049922)
 
-[Code Example 35 Implementing CreatableWatPlugin 55](#_Toc11049923)
+[Code Example 35 Implementing CreatableWatPlugin](#_Toc11049923)
 
-[Code Example 36 56](#_Toc11049924)
+[Code Example 36](#_Toc11049924)
 
-[Code Example 37 Implementing getDataLocations() 56](#_Toc11049925)
+[Code Example 37 Implementing getDataLocations()](#_Toc11049925)
 
-[Code Example 38 Implementing getOutputDataLocations(),
-getInputDataLocations() 57](#_Toc11049926)
+[Code Example 38 Implementing getOutputDataLocations(),getInputDataLocations()](#_Toc11049926)
 
-[Code Example 39 Filling out getDataLocations() 57](#_Toc11049927)
+[Code Example 39 Filling out getDataLocations()](#_Toc11049927)
 
-[Code Example 40 Implementing defaultDataLocations() 58](#_Toc11049928)
+[Code Example 40 Implementing defaultDataLocations()](#_Toc11049928)
 
-[Code Example 41 Implementing validLinkedToDssPath() 58](#_Toc11049929)
+[Code Example 41 Implementing validLinkedToDssPath()](#_Toc11049929)
 
-[Code Example 42 Implementing setting of DSS path parts
-59](#_Toc11049930)
+[Code Example 42 Implementing setting of DSS path parts](#_Toc11049930)
 
-[Code Example 43 Updating getInputDataLocations(), and
-getOutDataLocations() to return getDefaultDataLocations
-59](#_Toc11049931)
+[Code Example 43 Updating getInputDataLocations(), and getOutDataLocations() to return getDefaultDataLocations](#_Toc11049931)
 
-[Code Example 44 Initial Code for setDataLocations() 59](#_Toc11049932)
+[Code Example 44 Initial Code for setDataLocations()](#_Toc11049932)
 
-[Code Example 45 Filling out setDataLocations() 60](#_Toc11049933)
+[Code Example 45 Filling out setDataLocations()](#_Toc11049933)
 
-[Code Example 46 Completing Plug-in’s setDataLocations()
-60](#_Toc11049934)
+[Code Example 46 Completing Plug-in’s setDataLocations()](#_Toc11049934)
 
-[Code Example 47 Implementing compute() 61](#_Toc11049935)
+[Code Example 47 Implementing compute()](#_Toc11049935)
 
-[Code Example 48 Implementing setComputeOptions(), isComputable()
-61](#_Toc11049936)
+[Code Example 48 Implementing setComputeOptions(), isComputable()](#_Toc11049936)
 
-[Code Example 49 Filling out compute() 61](#_Toc11049937)
+[Code Example 49 Filling out compute()](#_Toc11049937)
 
-[Code Example 50 Implementing Alternative’s compute() 62](#_Toc11049938)
+[Code Example 50 Implementing Alternative’s compute()](#_Toc11049938)
 
-[Code Example 51 Reading TimeSeriesContainer 63](#_Toc11049939)
+[Code Example 51 Reading TimeSeriesContainer](#_Toc11049939)
 
-[Code Example 52 Writing TimeSeriesContainer 63](#_Toc11049940)
+[Code Example 52 Writing TimeSeriesContainer](#_Toc11049940)
 
-[Code Example 53 Implementing Alternative’s compute() 64](#_Toc11049941)
+[Code Example 53 Implementing Alternative’s compute()](#_Toc11049941)
 
-[Code Example 54 Alternative’s compute() 65](#_Toc11049942)
+[Code Example 54 Alternative’s compute()](#_Toc11049942)
 
-[Code Example 55 Implementing OutputPlugin 66](#_Toc11049943)
+[Code Example 55 Implementing OutputPlugin](#_Toc11049943)
 
-[Code Example 56 Implementing hasOutputVariables() 67](#_Toc11049944)
+[Code Example 56 Implementing hasOutputVariables()](#_Toc11049944)
 
-[Code Example 57 Implementing getAvailOutputVariables()
-67](#_Toc11049945)
+[Code Example 57 Implementing getAvailOutputVariables()](#_Toc11049945)
 
-[Code Example 58 Output Variable variables 67](#_Toc11049946)
+[Code Example 58 Output Variable variables](#_Toc11049946)
 
-[Code Example 59 Implementing getOutputValue() 68](#_Toc11049947)
+[Code Example 59 Implementing getOutputValue()](#_Toc11049947)
 
-[Code Example 60 Implementing UpdateTimeSeries() 68](#_Toc11049948)
+[Code Example 60 Implementing UpdateTimeSeries()](#_Toc11049948)
 
-[Code Example 61 Implementing computeOutputVariables()
-68](#_Toc11049949)
+[Code Example 61 Implementing computeOutputVariables()](#_Toc11049949)
 
 # WAT Plug-ins
 
