@@ -646,8 +646,11 @@ The following exceptions can be thrown by the Plug-in:
 
 
 <span id="_Toc11049856" class="anchor"></span>
-![](PluginDocumentationImages/Figure2.png)
-Figure 2 Base Server-side
+<p align="center">
+  <img src="PluginDocumentationImages/Figure2.png"/>
+  <br/>
+    Figure 2 Base Server-side
+</p>
 classes
 
 ## Plug-in Concept
@@ -726,8 +729,12 @@ for the status of the server part of the plug-in.
 </tbody>
 </table>
 
-<span id="_Toc11049857" class="anchor"></span>Figure 3 WAT Plug-in
-Interfaces
+<span id="_Toc11049857" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure3.png"/>
+  <br/>
+    Figure 3 WAT Plug-in Interfaces
+</p>Figure 3 
 
 ### SimplePlugin
 
@@ -831,8 +838,12 @@ public class FragilityCurvePlugin extends
 AbstractSelfContainedPlugin\<FragilityCurveAlt\> implements
 CreatableWatPlugin
 
-<span id="_Toc11049858" class="anchor"></span>Figure 4 Plug-in
-Interfaces
+<span id="_Toc11049858" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure4.png"/>
+  <br/>
+    Figure 4 Plug-in Interfaces
+</p>
 
 ### Plug-ins for programs that run outside of the WAT process
 
@@ -855,22 +866,39 @@ There are two categories of designs used to incorporate the HEC modeling
 programs. The first one is used for the Java® based programs. This
 design is shown below:
 
-<span id="_Toc11049859" class="anchor"></span>Figure 5 Design for
-Java-based programs
+<span id="_Toc11049859" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure5.png"/>
+  <br/>
+    Figure 5 Design for Java-based programs
+</p>
+
 
 #### Non Java Program Plug-in
 
 The second design is for programs that are not written in Java such as
 C\# or Visual Basic programs.
 
-<span id="_Toc11049860" class="anchor"></span>Figure 6 Non-Java Plugin
+<span id="_Toc11049860" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure6.png"/>
+  <br/>
+    Figure 6 Non-Java Plugin
+</p>
+
 
 The final plug-in design is for plug-ins that handle most of the plug-in
 details but launch an external program for the computation. This process
 works well for programs that are written as command line accessible
 programs.
 
-<span id="_Toc11049861" class="anchor"></span>Figure 7 Non Java Plugin
+<span id="_Toc11049861" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure7.png"/>
+  <br/>
+    Figure 7 Non Java Plugin
+</p>
+
 
 It is not intended that any of the standalone model programs contain
 WAT-specific code when they are running outside of the WAT environment.
@@ -996,10 +1024,12 @@ Event Generator in the FRA program sequence. It shows how to modify the
 compute options to define the event list and how to provide the compute
 options to the WAT.
 
-![PluginLogicTree](media/image8.png)
-
-<span id="_Toc11049862" class="anchor"></span>Figure 8 Plugin Decision
-Logic
+<span id="_Toc11049862" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure8.png"/>
+  <br/>
+    Figure 8 Plugin Decision Logic
+</p>
 
 ## Debugging Plug-ins through Netbeans and HEC-WAT
 
@@ -1017,10 +1047,12 @@ debugging session in the Netbeans IDE, you can follow these steps.
 The first step is to modify the HEC-WAT.config file. The HEC-WAT config
 file lives next to the HEC-*WAT.exe*.
 
-![](media/image9.png)
-
-<span id="_Toc11049863" class="anchor"></span>Figure 9 The
-HEC-WAT.config file
+<span id="_Toc11049863" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure9.png"/>
+  <br/>
+    Figure 9 The HEC-WAT.config file
+</p>
 
 Add the following line to the bottom of the config file:
 
@@ -1041,33 +1073,42 @@ that will first be called when the button in the toolbar is clicked.
 To attach the debugger, we will click on Debug in the main menu, and
 then select “Attach Debugger”
 
-![](media/image10.png)
-
-<span id="_Toc11049864" class="anchor"></span>Figure 10 Attaching the
-debugger
+<span id="_Toc11049864" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure10.png"/>
+  <br/>
+    Figure 10 Attaching the debugger
+</p>
 
 Review the Attach Window settings to ensure the port number is set to
 5000, and then select **OK**.
 
-![](media/image11.png)
-
-<span id="_Toc11049865" class="anchor"></span>Figure 11 Attach Debugger
-Settings
+<span id="_Toc11049865" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure11.png"/>
+  <br/>
+    Figure 11 Attach Debugger Settings
+</p>
 
 The debug break line is set on line 94:
 
-![](media/image12.png)
+<span id="_Toc11049889" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample1.png"/>
+  <br/>
+    Code Example 1 The debug line
+</p>
 
-<span id="_Toc11049889" class="anchor"></span>Code Example 1 The debug
-line
 
 If we now click the mapper button in the toolbar, the process will stop
 on line 92.
 
-![](media/image13.png)
-
-<span id="_Toc11049890" class="anchor"></span>Code Example 2 Stopping at
-the Debug Line
+<span id="_Toc11049890" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample2.png"/>
+  <br/>
+    Code Example 2 Stopping at the Debug Line
+</p>
 
 This will allow us to step over or into any method. This includes
 methods contained in the compiled WAT jars. Be aware that some of the
