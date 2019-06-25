@@ -638,12 +638,12 @@ The following exceptions can be thrown by the Plug-in:
 </table>
 
 <span id="_Toc11049855" class="anchor"></span>
-(Figure1)[PluginDocumentationImages/Figure1.png]
+![](PluginDocumentationImages/Figure1.png])
 Figure 1 Base Plug-in
 classes
 
 <span id="_Toc11049856" class="anchor"></span>
-(Figure2)[PluginDocumentationImages/Figure2.png]
+[](PluginDocumentationImages/Figure2.png)
 Figure 2 Base Server-side
 classes
 
