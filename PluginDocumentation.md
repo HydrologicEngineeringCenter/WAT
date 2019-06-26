@@ -1220,27 +1220,37 @@ This plug-in will extend AbstractPlugin from the hec2.plugin package and
 implement the hec2.wat.plugin.SimpleWatPlugin interface. After adding
 that to the class definition, the project should look like this:
 
-<span id="_Toc11049892" class="anchor"></span>Code Example 4 Extending
-AbstractPlugin from the hec2.plugin Package
+<span id="_Toc11049892" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample4.png"/>
+  <br/>
+    Code Example 4 Extending AbstractPlugin from the hec2.plugin Package
+</p>
+
 
 Our next task is to implement all required methods.
 
 To begin, add some static final strings for the name of the plug-in, the
 short name for the plug-in, and the version of the plug-in.
 
-![](media/image24.png)
-
-<span id="_Toc11049893" class="anchor"></span>Code Example 5 Adding
-Static Variables
+<span id="_Toc11049893" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample5.png"/>
+  <br/>
+    Code Example 5 Adding Static Variables
+</p>
 
 Next, initialize the Mapper Plug-in in the constructor and create an
 instance of the plug-in in the main sub. This step will require adding
 an import for the hec2.wat.plugin.WatPluginManager.
 
-![](media/image25.png)
+<span id="_Toc11049894" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample6.png"/>
+  <br/>
+    Code Example 6 MapperPlugin Constructor
+</p>
 
-<span id="_Toc11049894" class="anchor"></span>Code Example 6
-MapperPlugin Constructor
 
 We have set the name of the plug-in, initialized any abstract elements,
 and registered with the WatPluginManager. To give the user access to the
@@ -1253,10 +1263,12 @@ com.rma.client.Browser, com.rma.client.BrowserAction,
 hec2.wat.client.WatFrame, javax.swing.Action, javax.swing.Icon, and
 rma.swing.RmaImage.
 
-![](media/image26.png)
-
-<span id="_Toc11049895" class="anchor"></span>Code Example 7 Additional
-MapperPlugin Initialization
+<span id="_Toc11049895" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample7.png"/>
+  <br/>
+    Code Example 7 Additional MapperPlugin Initialization
+</p>
 
 There are a few items worth noting here:
 
@@ -1295,28 +1307,34 @@ applications.
 We need to add the appropriate file path to the application as a private
 variable to the plug-in.
 
-![](media/image27.png)
-
-<span id="_Toc11049896" class="anchor"></span>Code Example 8 Defining
-Executable path
+<span id="_Toc11049896" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample8.png"/>
+  <br/>
+    Code Example 8 Defining Executable path
+</p>
 
 Right-click isAppInstalled() and let the IDE add the method at the
 bottom of the class and implement it.
 
-![](media/image28.png)
-
-<span id="_Toc11049897" class="anchor"></span>Code Example 9
-Implementing isAppIppInstalled()
+<span id="_Toc11049897" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample9.png"/>
+  <br/>
+    Code Example 9 Implementing isAppIppInstalled()
+</p>
 
 This method will add an import for com.rma.io.FileManagerImpl.
 getApplicationPath() is a method we need to add. This is written so that
 we can get the application path in two different locations within the
 plug-in, determine if the application exists, and launch it later.
 
-![](media/image29.png)
-
-<span id="_Toc11049898" class="anchor"></span>Code Example 10
-Implementing getApplicationPath()
+<span id="_Toc11049898" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample10.png"/>
+  <br/>
+    Code Example 10 Implementing getApplicationPath()
+</p>
 
 This method will add an import for hec.appInterface.AppDaddy. From the
 AppDaddy class we are able to get the current application (HEC-WAT) and
@@ -1340,27 +1358,34 @@ The simplest thing to do in this case is launch the mapping application
 via command line with no variation based on the status of the current
 WAT instance. The code to do that will look something like this:
 
-![](media/image30.png)
+<span id="_Toc11049899" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample11.png"/>
+  <br/>
+    Code Example 11 Implementing displayApplication()
+</p>
 
-<span id="_Toc11049899" class="anchor"></span>Code Example 11
-Implementing displayApplication()
 
 This requires an import for java.lang.IOException. A private variable of
 type Process was added to keep a pointer to the process that was
 initialized to shut down the process if WAT requests the application to
 shut down.
 
-![](media/image31.png)
-
-<span id="_Toc11049900" class="anchor"></span>Code Example 12 Adding
-Process member
+<span id="_Toc11049900" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample12.png"/>
+  <br/>
+    Code Example 12 Adding Process member
+</p>
 
 This can be accomplished through the Close() method.
 
-![](media/image32.png)
-
-<span id="_Toc11049901" class="anchor"></span>Code Example 13
-Implementing close( )
+<span id="_Toc11049901" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample13.png"/>
+  <br/>
+    Code Example 13 Implementing close( )
+</p>
 
 It is possible to connect this plug-in closer with the WAT instance in a
 few different ways. For instance, determining whether an existing
@@ -1375,16 +1400,21 @@ The following code determines the list of shapefiles in the map window,
 if there is a current project with a map window open, and constructs a
 string that will provide the shapefiles as a command line argument:
 
-![](media/image33.png)
-
-<span id="_Toc11049902" class="anchor"></span>Code Example 14
-Determining the shapefile list in the map window
+<span id="_Toc11049902" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample14.png"/>
+  <br/>
+    Code Example 14 Determining the shapefile list in the map window
+</p>
 
 This mapper produces the following result:
 
-![](media/image34.png)
-
-<span id="_Toc11049874" class="anchor"></span>Figure 20 Mapper Result
+<span id="_Toc11049874" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure20.png"/>
+  <br/>
+    Figure 20 Mapper Result
+</p>
 
 There are a few additional details that need to be finalized. There are
 a handful of methods that have not been implemented:
@@ -1407,20 +1437,26 @@ None of these are absolutely necessary to create a utility program, but
 each can provide a variety of useful features. For this tutorial they
 are implemented as seen below:
 
-![](media/image35.png)
+<span id="_Toc11049903" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample15.png"/>
+  <br/>
+    Code Example 15 Implementing openProject() and createProject()
+</p>
 
-<span id="_Toc11049903" class="anchor"></span>Code Example 15
-Implementing openProject() and createProject()
+<span id="_Toc11049904" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample16.png"/>
+  <br/>
+    Code Example 16 Implementing getProjectName(), saveProject(), getLogFile()
+</p>
 
-![](media/image36.png)
-
-<span id="_Toc11049904" class="anchor"></span>Code Example 16
-Implementing getProjectName(), saveProject(), getLogFile()
-
-![](media/image37.png)
-
-<span id="_Toc11049905" class="anchor"></span>Code Example 17
-Implementing getVersion(), getDirectory()
+<span id="_Toc11049905" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample17.png"/>
+  <br/>
+    Code Example 17 Implementing getVersion(), getDirectory()
+</p>
 
 Please conduct the following steps (based on section 1.5.3 and 1.5.4) to
 ensure the correct main class can be found by the WAT in the manifest
