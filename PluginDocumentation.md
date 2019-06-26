@@ -1466,85 +1466,114 @@ that the project name be the same as the plug-in name you wish to use.
 To create a new NetBeans project launch NetBeans, and select **File \>
 NewProject…**.
 
-![C:\\Users\\Q0HECWPL\\Documents\\WAT\\Plugin
-Documentation\\PluginDocumentation\\NewNetBeansProject.png](media/image14.png)
+<span id="_Toc11049875" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure12.png"/>
+  <br/>
+    Figure 21 Creating a new NetBeans project
+</p>
 
-<span id="_Toc11049875" class="anchor"></span>Figure 21 Creating a new
-NetBeans project
 
 The new project wizard will appear. Define the project type, select the
 project type **JavaApplication** (within the Category Java) and press
 **Next.**
 
-![C:\\Users\\Q0HECWPL\\Documents\\WAT\\Plugin
-Documentation\\PluginDocumentation\\NewJavaApplication.png](media/image15.png)
+<span id="_Toc11049876" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure13.png"/>
+  <br/>
+    Figure 22 The NetBeans New Project Wizard
+</p>
 
-<span id="_Toc11049876" class="anchor"></span>Figure 22 The NetBeans New
-Project Wizard
 
 Name the project, define its location, and name the main class for the
 project. It is recommended that a dedicated folder for storing libraries
 is created and named lib. Once this step has been completed select
 **Finish**.
 
-![C:\\Users\\Q0HECWPL\\Documents\\WAT\\Plugin
-Documentation\\PluginDocumentation\\ExampleBasicPlugin.png](media/image38.png)
+<span id="_Toc11049877" class="anchor"></span>
+<span id="_Toc11049876" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure23.png"/>
+  <br/>
+    Figure 23 Creating a project
+</p>
 
-<span id="_Toc11049877" class="anchor"></span>Figure 23 Creating a
-project
 
 When you select Finish, NetBeans will create a new project, a new
 package based on your project name, and a new main class based on the
 name you defined. We will add all required referenced jars to the lib
 folder in the next few steps.
 
-![C:\\Users\\Q0HECWPL\\Documents\\WAT\\Plugin
-Documentation\\PluginDocumentation\\MainClass.png](media/image39.png)
+<span id="_Ref1051432" class="anchor"></span>
+<span id="_Toc11049876" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure24.png"/>
+  <br/>
+    Figure 24 A New Project in NetBeans
+</p>
 
-<span id="_Ref1051432" class="anchor"></span>Figure 24 A New Project in
-NetBeans
 
 Reference jars need to be added. The jars are within the HEC-WAT
 directory under the jars folder. To add the jars, right click on the
 **Project** node in the Project pane and select **Properties**.
 
-![](media/image18.png)
+<span id="_Toc11049879" class="anchor"></span>
+<span id="_Toc11049876" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure25.png"/>
+  <br/>
+    Figure 25 Opening the Properties Editor
+</p>
 
-<span id="_Toc11049879" class="anchor"></span>Figure 25 Opening the
-Properties Editor
 
 The properties editor will appear, in the left-hand pane. Select
 **Libraries** and click **Add Jar/Folder**.
 
-![](media/image19.png)
+<span id="_Toc11049880" class="anchor"></span>
+<span id="_Toc11049876" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure26.png"/>
+  <br/>
+    Figure 26 The Project Properties Editor
+</p>
 
-<span id="_Toc11049880" class="anchor"></span>Figure 26 The Project
-Properties Editor
 
 Browse to HEC-WAT/jar and select the following jars:
 
 hec.jar, hecnf.jar, hecnfPlugin.jar, rma.jar, rmadev.jar, watModel.jar
 and wat.jar.
 
-![](media/image20.png)
+<span id="_Toc11049881" class="anchor"></span>
+<span id="_Toc11049876" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure27.png"/>
+  <br/>
+    Figure 27 Adding jars
+</p>
 
-<span id="_Toc11049881" class="anchor"></span>Figure 27 Adding jars
 
 Click **Add Jar/Folder**, go into the sys folder and select
 *jdom-1.0.jar*.
 
-![C:\\Users\\Q0HECWPL\\Documents\\WAT\\Plugin
-Documentation\\PluginDocumentation\\addOneMoreJar.png](media/image21.png)
-
-<span id="_Toc11049882" class="anchor"></span>Figure 28 Adding
-jdom-1.0.jar
+<span id="_Toc11049882" class="anchor"></span>
+<span id="_Toc11049876" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure28.png"/>
+  <br/>
+    Figure 28 Adding jdom-1.0.jar
+</p>
 
 Your Project’s properties should look like Figure 29:
 
-![](media/image22.png)
+<span id="_Ref1051499" class="anchor"></span>
+<span id="_Toc11049876" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure29.png"/>
+  <br/>
+    Figure 29 Project Properties example
+</p>
 
-<span id="_Ref1051499" class="anchor"></span>Figure 29 Project
-Properties example
 
 Our next steps begin to create the first few classes for the plug-in.
 
@@ -1557,10 +1586,13 @@ that extends SelfContainedWatPluginAltbefore we can extend that class.
 To create a class, right click on the basicplugin package and select
 **Create New**.
 
-![C:\\Users\\Q0HECWPL\\Documents\\WAT\\Plugin
-Documentation\\PluginDocumentation\\newClass.png](media/image40.png)
-
-<span id="_Toc11049884" class="anchor"></span>Figure 30 Creating a Class
+<span id="_Toc11049884" class="anchor"></span>
+<span id="_Toc11049876" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure30.png"/>
+  <br/>
+    Figure 30 Creating a Class
+</p>
 
 Name the alternative in a way that it is clear what the alternative is.
 You can create an abstract alternative and implement many different
@@ -1568,18 +1600,17 @@ alternatives for the same plug-in but this project will only make one
 alternative. Its name will be BasicAlternative so that it is clear that
 this goes with the BasicPlugin.
 
-![C:\\Users\\Q0HECWPL\\Documents\\WAT\\Plugin
-Documentation\\PluginDocumentation\\newAlternativeClass.png](media/image41.png)
-
-<span id="_Toc11049885" class="anchor"></span>Figure 31 The New Java
-Class Wizard
+<span id="_Toc11049885" class="anchor"></span>
+<span id="_Toc11049876" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure31.png"/>
+  <br/>
+    Figure 31 The New Java Class Wizard
+</p>
 
 The first step after creating the class is to import the proper
 namespaces. Import hec2.plugin.selfContainedPluginAlt and use your class
 to extend the abstract class of the same name.
-
-![C:\\Users\\Q0HECWPL\\Documents\\WAT\\Plugin
-Documentation\\PluginDocumentation\\BasicAlternative.png](media/image42.png)
 
 <span id="_Toc11049906" class="anchor"></span>Code Example 18 Stubbing
 out Methods
@@ -1592,9 +1623,6 @@ create our basic plug-in. Go back to the BasicPlugin class and import
 hec2.wat.plugin.AbstractSelfContainedWatPlugin and then extend
 BasicPlugin using the BasicAlternative as your alternative type for the
 generic argument.
-
-![C:\\Users\\Q0HECWPL\\Documents\\WAT\\Plugin
-Documentation\\PluginDocumentation\\BasicPluginExtendsSelfContained.png](media/image43.png)
 
 <span id="_Toc11049907" class="anchor"></span>Code Example 19
 BasicPlugin Class
@@ -1610,8 +1638,6 @@ static variables for things like the name of the plug-in, the directory
 for results storage, the version number, and the extension of the files
 stored by this plug-in. Add four private static strings and create a
 constructor:
-
-![](media/image44.png)
 
 <span id="_Toc11049908" class="anchor"></span>Code Example 20
 Initializing the BasicPlugin
