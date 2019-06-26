@@ -2460,8 +2460,13 @@ working.
 </tbody>
 </table>
 
-<span id="_Toc11049886" class="anchor"></span>Figure 32 Basic WAT
-Plug-in Interfaces
+<span id="_Toc11049886" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure32.png"/>
+  <br/>
+    Figure 32 Basic WAT Plug-in Interfaces
+</p>
+
 
 ### SimplePlugin
 
@@ -2533,7 +2538,12 @@ public class FragilityCurvePlugin extends
 AbstractSelfContainedPlugin\<FragilityCurveAlt\> implements
 CreatableWatPlugin
 
-<span id="_Toc11049887" class="anchor"></span>Figure 33 Plugin classes
+<span id="_Toc11049887" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure4.png"/>
+  <br/>
+    Figure 33 Plugin classes
+</p>
 
 # Map Drawing
 
@@ -2594,8 +2604,13 @@ All elements of a specific type, from the optimized set, are drawn using
 the same drawing properties. All ReservoirElements are all drawn the
 same no matter which model they come from.
 
-<span id="_Toc11049888" class="anchor"></span>Figure 34 Graphic Elements
-Class Relationship
+<span id="_Toc11049888" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure34.png"/>
+  <br/>
+    Figure 34 Graphic Elements Class Relationship
+</p>
+
 
 Graphic Elements also have a drawing hierarchy number, the lowest number
 will be the element that actually gets drawn on the map panel. In the
