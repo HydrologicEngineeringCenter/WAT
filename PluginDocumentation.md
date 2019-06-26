@@ -1859,10 +1859,12 @@ the private memory triggers the isModified property improperly on a
 load, so it is best practice to update that property after reading the
 file in by calling setModified(false).
 
-![](media/image51.png)
-
-<span id="_Toc11049915" class="anchor"></span>Code Example 27 Loading an
-Alternative from XML
+<span id="_Toc11049915" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample27.png"/>
+  <br/>
+    Code Example 27 Loading an Alternative from XML
+</p>
 
 The BasicPlugin class needs to be modified to save the alternative when
 the plug-in is asked to save the project. Since the plug-in may have
@@ -1874,10 +1876,12 @@ through each BasicAlternative in \_altList and call saveData().
 saveData() in turn calls saveData(RmaFile file) using the getFile()
 method exposed in AbstractManager.
 
-![](media/image52.png)
-
-<span id="_Toc11049916" class="anchor"></span>Code Example 28
-Implementing saveProject()
+<span id="_Toc11049916" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample28.png"/>
+  <br/>
+    Code Example 28 Implementing saveProject()
+</p>
 
 In order to create an alternative, there are two minimum methods that
 need to be populated in the BasicPlugin class: newAlternative(String
@@ -1889,10 +1893,12 @@ The first method is simple, we can just use the overloaded constructor
 on the BasicAlternative to create a new alternative with the string
 argument passed through.
 
-![](media/image53.png)
-
-<span id="_Toc11049917" class="anchor"></span>Code Example 29 Creating a
-New Alternative
+<span id="_Toc11049917" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample29.png"/>
+  <br/>
+    Code Example 29 Creating a New Alternativ
+</p>
 
 The second method returns a NewObjectFactory so it requires creating a
 class that extends NewObjectFactory specific to our BasicAlternative.
@@ -1911,29 +1917,37 @@ of localized applications.
 Create an additional class called BasicPluginI18n and have it extend
 I18n in the com.rma.util namespace.
 
-![](media/image54.png)
-
-<span id="_Toc11049918" class="anchor"></span>Code Example 30
-BasicPluginI18n class
+<span id="_Toc11049918" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample30.png"/>
+  <br/>
+    Code Example 30 BasicPluginI18n class
+</p>
 
 A BasicPluginMessages class containing a static resource for the plug-in
 name needs to be created. Create a class called BasicPluginMessages and
 build it like the following image:
 
-![](media/image55.png)
+<span id="_Toc11049919" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample31.png"/>
+  <br/>
+    Code Example 31 The BasicPluginMessages class
+</p>
 
-<span id="_Toc11049919" class="anchor"></span>Code Example 31 The
-BasicPluginMessages class
 
 Finally, we need to make a properties file which needs to be named
 consistently with our resource bundle name so that it will be in the
 basicplugin package with the name BasicPluginProperties.Properties. It
 will contain the following properties:
 
-![](media/image56.png)
+<span id="_Toc11049920" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample32.png"/>
+  <br/>
+    Code Example 32 Creating a Properties File
+</p>
 
-<span id="_Toc11049920" class="anchor"></span>Code Example 32 Creating a
-Properties File
 
 Using this class and the BasicPluginI18n class, we can implement the
 constructor on the BasicAlternativeFactory. The only constructor we want
@@ -1944,10 +1958,12 @@ will create a space for a pointer to the plug-in in the class and
 instantiate the proper constructor on the parent class
 AbstractNewObjectFactory.
 
-![](media/image57.png)
-
-<span id="_Toc11049921" class="anchor"></span>Code Example 33
-BasicAlternativeFactory Contructor
+<span id="_Toc11049921" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample33.png"/>
+  <br/>
+    Code Example 33 BasicAlternativeFactory Contructor
+</p>
 
 There are four methods that need to be implemented in the
 BasicAlternativeFactory. createOpenObjectPanel and openObject(JComponent
@@ -1959,10 +1975,12 @@ The other two methods generate a user interface with a single panel with
 a name and description text box. Follow the code and your version will
 work:
 
-![](media/image58.png)
-
-<span id="_Toc11049922" class="anchor"></span>Code Example 34 Methods to
-create new Alternatives
+<span id="_Toc11049922" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample34.png"/>
+  <br/>
+    Code Example 34 Methods to create new Alternatives
+</p>
 
 Now that we can create a new alternative and save the alternative in the
 project directory, our next step is to signify to WAT that the plug-in
@@ -1970,19 +1988,25 @@ can create alternatives. To do this, implement the CreatableWatPlugin
 interface on the BasicPlugin class. As it is a marker interface, it does
 not require any methods to be implemented.
 
-![](media/image59.png)
+<span id="_Toc11049923" class="anchor"></span>
 
-<span id="_Toc11049923" class="anchor"></span>Code Example 35
-Implementing CreatableWatPlugin
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample35.png"/>
+  <br/>
+    Code Example 35 Implementing CreatableWatPlugin
+</p>
 
 Once the WAT recognizes this as a creatable plug-in, the **Create New**
 menu item will be added to a right click context menu. When clicked, the
 WAT will request the plug-in newobjectFactory, so we need to provide
 that through the proper method in the BasicPlugin.
 
-![](media/image60.png)
-
-<span id="_Toc11049924" class="anchor"></span>Code Example 36
+<span id="_Toc11049924" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample36.png"/>
+  <br/>
+    Code Example 36 newObjectFactory implementation
+</p>
 
 Next, we will define data locations to provide to the Model Linking
 Editor for input and output, and support the calls that allow data
@@ -2006,10 +2030,12 @@ alternative.
 We need to determine if the request is for input or output DataLocations
 by looking at the int provided. The code should look like this:
 
-![](media/image61.png)
-
-<span id="_Toc11049925" class="anchor"></span>Code Example 37
-Implementing getDataLocations()
+<span id="_Toc11049925" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample37.png"/>
+  <br/>
+    Code Example 37 Implementing getDataLocations()
+</p>
 
 Since each model alternative may have different storage based on user
 settings, it is best to delegate the request to the alternative. More
@@ -2020,20 +2046,24 @@ getOutputDataLocations() to the Basic Alternative class.
 
 Add the following method stubs to the BasicAlternative class:
 
-![](media/image62.png)
-
-<span id="_Toc11049926" class="anchor"></span>Code Example 38
-Implementing getOutputDataLocations(), getInputDataLocations()
+<span id="_Toc11049926" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample38.png"/>
+  <br/>
+    Code Example 38 Implementing getOutputDataLocations(), getInputDataLocations()
+</p>
 
 Now we can call these methods in the BasicPlugin implementation of
 getDataLocations.
 
 The revised code in BasicPlguin should look like this:
 
-![](media/image63.png)
-
-<span id="_Toc11049927" class="anchor"></span>Code Example 39 Filling
-out getDataLocations()
+<span id="_Toc11049927" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample39.png"/>
+  <br/>
+    Code Example 39 Filling out getDataLocations()
+</p>
 
 We can now focus our attention on providing the right input and output
 data locations from the BasicAlternative class. For our project, only
@@ -2074,17 +2104,22 @@ Since there are other places where we will check the validity of linked
 data locations and set the DSS paths, these methods were abstracted for
 consistency:
 
-![](media/image64.png)
-
-<span id="_Toc11049928" class="anchor"></span>Code Example 40
-Implementing defaultDataLocations()
+<span id="_Toc11049928" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample40.png"/>
+  <br/>
+    Code Example 40 Implementing defaultDataLocations()
+</p>
 
 The method for checking validity is fairly simple:
 
-![](media/image65.png)
+<span id="_Toc11049929" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample41.png"/>
+  <br/>
+    Code Example 41 Implementing validLinkedToDssPath()
+</p>
 
-<span id="_Toc11049929" class="anchor"></span>Code Example 41
-Implementing validLinkedToDssPath()
 
 The method for setting the DSS path parts for our single data location
 is a bit more complicated and outlines part of the peculiarities of WAT
@@ -2097,10 +2132,12 @@ strongly recommended that the F-part for DSS output is defined using the
 PathnameUtilities class that sets the F-Part based on the
 ModelAlternative class.
 
-![](media/image66.png)
-
-<span id="_Toc11049930" class="anchor"></span>Code Example 42
-Implementing setting of DSS path parts
+<span id="_Toc11049930" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample42.png"/>
+  <br/>
+    Code Example 42 Implementing setting of DSS path parts
+</p>
 
 The data location DSS parts are being defined based on the user’s
 selected input and appending the word output to the b part. Remember
@@ -2111,11 +2148,12 @@ Finally, the BasicAlternative, getInputDataLocations, and
 getOuputDataLocations methods need to be updated to point back at the
 getDefaultDataLocations method instead of returning null.
 
-![](media/image67.png)
-
-<span id="_Toc11049931" class="anchor"></span>Code Example 43 Updating
-getInputDataLocations(), and getOutDataLocations() to return
-getDefaultDataLocations
+<span id="_Toc11049931" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample43.png"/>
+  <br/>
+    Code Example 43 Updating getInputDataLocations(), and getOutDataLocations() to return getDefaultDataLocations
+</p>
 
 Now when a user makes a linkage in the model linking editor, the model
 linking editor calls the setDataLocations method. Since the
@@ -2124,10 +2162,12 @@ user preferences can be stored (and used in the compute), the plug-in
 will pass the information to the BasicAlternative. The boiler plate code
 is:
 
-![](media/image68.png)
-
-<span id="_Toc11049932" class="anchor"></span>Code Example 44 Initial
-Code for setDataLocations()
+<span id="_Toc11049932" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample44.png"/>
+  <br/>
+    Code Example 44 Initial Code for setDataLocations()
+</p>
 
 Next the BasicAlternative needs a setter for the DataLocation exposed so
 that the plug-in can call the method. In this method, we will check the
@@ -2137,19 +2177,23 @@ also be updated in case the user has changed the linkedto model in the
 process. Notice that the location is only added if it is not already in
 the list, otherwise it is just modified and the DSS parts updated.
 
-![](media/image69.png)
-
-<span id="_Toc11049933" class="anchor"></span>Code Example 45 Filling
-out setDataLocations()
+<span id="_Toc11049933" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample45.png"/>
+  <br/>
+    Code Example 45 Filling out setDataLocations()
+</p>
 
 One final step is to go back to the BasicPlugin class and modify the
 setDataLocations method to call the method we just wrote in the
 BasicAlternative class.
 
-![](media/image70.png)
-
-<span id="_Toc11049934" class="anchor"></span>Code Example 46 Completing
-Plug-in’s setDataLocations()
+<span id="_Toc11049934" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample46.png"/>
+  <br/>
+    Code Example 46 Completing Plug-in’s setDataLocations()
+</p>
 
 Now that alternative saving, reading, modifying, and linking are all in
 place, our final step is to define the compute sequence for modifying
@@ -2164,10 +2208,12 @@ class.
 An initial cut at the implementation would look like this in the
 BasicPlugin class:
 
-![](media/image71.png)
-
-<span id="_Toc11049935" class="anchor"></span>Code Example 47
-Implementing compute()
+<span id="_Toc11049935" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample47.png"/>
+  <br/>
+    Code Example 47 Implementing compute()
+</p>
 
 Since we want to change the compute if it is a deterministic vs WAT FRA
 compute, we need to pass the compute options into the BasicAlternative.
@@ -2175,18 +2221,22 @@ Our first step is to create a private variable for the compute options,
 and then expose a setter. The isComputable method also needs to return
 true which we can do that at the same time.
 
-![](media/image72.png)
-
-<span id="_Toc11049936" class="anchor"></span>Code Example 48
-Implementing setComputeOptions(), isComputable()
+<span id="_Toc11049936" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample48.png"/>
+  <br/>
+    Code Example 48 Implementing setComputeOptions(), isComputable()
+</p>
 
 Next, we need to set the compute options in the BasicPlugin compute
 method:
 
-![](media/image73.png)
-
-<span id="_Toc11049937" class="anchor"></span>Code Example 49 Filling
-out compute()
+<span id="_Toc11049937" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample49.png"/>
+  <br/>
+    Code Example 49 Filling out compute()
+</p>
 
 We write the compute logic in the BasicAlternative compute method.
 
@@ -2211,10 +2261,12 @@ Following the identification of the case, we will read the input from
 our linked to data location, update the values to represent the
 multiplied time series, and write the output out.
 
-![](media/image74.png)
-
-<span id="_Toc11049938" class="anchor"></span>Code Example 50
-Implementing Alternative’s compute()
+<span id="_Toc11049938" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample50.png"/>
+  <br/>
+    Code Example 50 Implementing Alternative’s compute()
+</p>
 
 To find the proper information, it is best to ask the compute options
 for the proper F-part for the linked data location. This is reflected in
@@ -2222,20 +2274,24 @@ the readTimeSeries method. Within the isFrm condition, the collection
 needs to be updated; if it is deterministic, the output is not stored in
 a collection and the twiddling of the colons is not necessary.
 
-![](media/image75.png)
-
-<span id="_Toc11049939" class="anchor"></span>Code Example 51 Reading
-TimeSeriesContainer
+<span id="_Toc11049939" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample51.png"/>
+  <br/>
+    Code Example 51 Reading TimeSeriesContainer
+</p>
 
 Finally, in the writing, the F-part needs to be properly set to reflect
 the previously communicated pattern for the models linking to this
 alternatives output. Since we used the WAT convention to define the
 path, we need to ask the compute options for the F-part for this event.
 
-![](media/image76.png)
-
-<span id="_Toc11049940" class="anchor"></span>Code Example 52 Writing
-TimeSeriesContainer
+<span id="_Toc11049940" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample52.png"/>
+  <br/>
+    Code Example 52 Writing TimeSeriesContainer
+</p>
 
 The final step prior to building is to update the manifest file to
 contain a directive for HEC-WAT to know what main class to use for the
@@ -2253,10 +2309,13 @@ your jar file and paste it into the HEC-WAT v1/jar/ext/ directory. If
 you do so, you should see your plug-in in the plug-in list next time you
 launch WAT.
 
-![](media/image77.png)
+<span id="_Toc11049941" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample53.png"/>
+  <br/>
+    Code Example 53 Implementing Alternative’s compute()
+</p>
 
-<span id="_Toc11049941" class="anchor"></span>Code Example 53
-Implementing Alternative’s compute()
 
 ## Hydrologic Event Generator Plug-in
 
@@ -2299,10 +2358,13 @@ compute, the event list will be set to have one member that is a clone
 of the RunTimeWindow. It will tell all subsequent plug-ins to run for
 the entire analysis period.
 
-![](media/image77.png)
+<span id="_Toc11049942" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample54.png"/>
+  <br/>
+    Code Example 54 Alternative’s compute()
+</p>
 
-<span id="_Toc11049942" class="anchor"></span>Code Example 54
-Alternative’s compute()
 
 Alternatively, this code could be modified to create many events within
 the RunTimeWindow. To do this, a loop would need to be added, and
@@ -2332,10 +2394,12 @@ The first step is adding an implements to the class definition on the
 BasicPlugin class. The interface we wish to implement is the
 OutputPlugin Interface.
 
-![](media/image78.png)
-
-<span id="_Toc11049943" class="anchor"></span>Code Example 55
-Implementing OutputPlugin
+<span id="_Toc11049943" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample55.png"/>
+  <br/>
+    Code Example 55 Implementing OutputPlugin
+</p>
 
 This will require three new methods to be added:
 
@@ -2360,10 +2424,12 @@ This is to determine if the specific model alternative has any output
 variables. In this case we are going to hard code this method to always
 return true.
 
-![](media/image79.png)
-
-<span id="_Toc11049944" class="anchor"></span>Code Example 56
-Implementing hasOutputVariables()
+<span id="_Toc11049944" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample56.png"/>
+  <br/>
+    Code Example 56 Implementing hasOutputVariables()
+</p>
 
 Since the BasicPlugin delegated most tasks about the DataLocations to
 the BasicPluginAlternative, it would be best for that plug-in to define
@@ -2372,10 +2438,12 @@ Since it is known with this application that there will only ever be one
 input data location, this product can be hard coded to provide only one
 output variable.
 
-![](media/image80.png)
-
-<span id="_Toc11049945" class="anchor"></span>Code Example 57
-Implementing getAvailOutputVariables()
+<span id="_Toc11049945" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample57.png"/>
+  <br/>
+    Code Example 57 Implementing getAvailOutputVariables()
+</p>
 
 Finally, a value needs to be provided for each event computed. The call
 sequence is as follows:
@@ -2392,32 +2460,42 @@ double after a compute, but only for immediately after the compute. The
 following three steps provide that functionality, and then the final
 step provide the access to the value in the BasicPlugin class.
 
-![](media/image81.png)
-
-<span id="_Toc11049946" class="anchor"></span>Code Example 58 Output
-Variable variables
+<span id="_Toc11049946" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample58.png"/>
+  <br/>
+    Code Example 58 Output Variable variables
+</p>
 
 A getter for that value was provided:
 
-![](media/image82.png)
+<span id="_Toc11049947" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample59.png"/>
+  <br/>
+    Code Example 59 Implementing getOutputValue()
+</p>
 
-<span id="_Toc11049947" class="anchor"></span>Code Example 59
-Implementing getOutputValue()
 
 The value as a part of the compute sequence was computed:
 
-![](media/image83.png)
-
-<span id="_Toc11049948" class="anchor"></span>Code Example 60
-Implementing UpdateTimeSeries()
+<span id="_Toc11049948" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample60.png"/>
+  <br/>
+    Code Example 60 Implementing UpdateTimeSeries()
+</p>
 
 Back at the BasicPlugin class, the following code was written to take
 advantage of that.
 
-![](media/image84.png)
+<span id="_Toc11049949" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample61.png"/>
+  <br/>
+    Code Example 61 Implementing computeOutputVariables()
+</p>
 
-<span id="_Toc11049949" class="anchor"></span>Code Example 61
-Implementing computeOutputVariables()
 
 Although out output variables should only ever be a list of length 1, if
 the list changes due to changes in the code, this method would keep
