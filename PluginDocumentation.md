@@ -1648,8 +1648,13 @@ The first step after creating the class is to import the proper
 namespaces. Import hec2.plugin.selfContainedPluginAlt and use your class
 to extend the abstract class of the same name.
 
-<span id="_Toc11049906" class="anchor"></span>Code Example 18 Stubbing
-out Methods
+<span id="_Toc11049906" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample18.png"/>
+  <br/>
+    Code Example 18 Stubbing out Methods
+</p>
+
 
 Implementation of all methods marked @Override occur in later portions
 of this guide.
@@ -1660,8 +1665,13 @@ hec2.wat.plugin.AbstractSelfContainedWatPlugin and then extend
 BasicPlugin using the BasicAlternative as your alternative type for the
 generic argument.
 
-<span id="_Toc11049907" class="anchor"></span>Code Example 19
-BasicPlugin Class
+<span id="_Toc11049907" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample19.png"/>
+  <br/>
+    Code Example 19 BasicPlugin Class
+</p>
+
 
 By allowing the NetBeans IDE to implement all abstract methods with
 method stubs, we can see the scope of the methods that require
@@ -1675,8 +1685,12 @@ for results storage, the version number, and the extension of the files
 stored by this plug-in. Add four private static strings and create a
 constructor:
 
-<span id="_Toc11049908" class="anchor"></span>Code Example 20
-Initializing the BasicPlugin
+<span id="_Toc11049908" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample20.png"/>
+  <br/>
+    Code Example 20 Initializing the BasicPlugin
+</p>
 
 Three actions occur in the BasicPlugin constructor, calling the default
 constructor of the parent class, setting the name of the plug-in, and
@@ -1696,10 +1710,13 @@ For our case, we will set the program order up not appear in the default
 program list and have no default image. It is beneficial to set the
 program order item prior to registering with the WatPluginManager.
 
-![](media/image45.png)
+<span id="_Toc11049909" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample21.png"/>
+  <br/>
+    Code Example 21 The BasicPlugin constructor
+</p>
 
-<span id="_Toc11049909" class="anchor"></span>Code Example 21 The
-BasicPlugin constructor
 
 To properly register with the WAT, all that is needed is to call the
 default constructor. The HEC-WAT program finds all plug-ins in the \\ext
@@ -1708,10 +1725,13 @@ the end of this guide). Therefore, adding a line to construct the
 plug-in with the default constructor is required. This will be the only
 line necessary in the main method for the plug-in.
 
-![](media/image46.png)
+<span id="_Toc11049910" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample22.png"/>
+  <br/>
+    Code Example 22 BasicPlugin main()
+</p>
 
-<span id="_Toc11049910" class="anchor"></span>Code Example 22
-BasicPlugin main()
 
 The next steps are to begin filling out other methods necessary for file
 storage. Our first three methods are getAltFileExtension(),
@@ -1725,10 +1745,12 @@ root directory of the WAT. The getVersion method allows the plug-in to
 determine the correct approach for reading alternative files if
 subsequent versions of the plug-in are developed.
 
-![](media/image47.png)
-
-<span id="_Toc11049911" class="anchor"></span>Code Example 23
-Implementing getAltFileExtension(), getPluginDirectory(), getVersion()
+<span id="_Toc11049911" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample23.png"/>
+  <br/>
+    Code Example 23 Implementing getAltFileExtension(), getPluginDirectory(), getVersion()
+</p>
 
 **<span class="underline">DataLocations:</span>**
 
@@ -1785,10 +1807,12 @@ we will store an array list. To initialize the list, we will create a
 default constructor. We will also create one overloaded constructor that
 takes a single argument of the name of the plug-in.
 
-![](media/image48.png)
-
-<span id="_Toc11049912" class="anchor"></span>Code Example 24 Defining
-the DataLocations List
+<span id="_Toc11049912" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample24.png"/>
+  <br/>
+    Code Example 24 Defining the DataLocations List
+</p>
 
 Now we need to be able to load a document of type org.jdom.Document
 based on the abstract loadDocument method provided by the
@@ -1804,18 +1828,22 @@ through getName() and getDescription() respectively. Before we load a
 document, we will define how our document will be saved. To do this we
 will override the AbstractManager.saveData(RmaFile file) method:
 
-![](media/image49.png)
-
-<span id="_Toc11049913" class="anchor"></span>Code Example 25 Defining
-XML elements
+<span id="_Toc11049913" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample25.png"/>
+  <br/>
+    Code Example 25 Defining XML elements
+</p>
 
 To facilitate consistency and minimize typos in the reading and writing
 of the xml format, a few static strings were defined:
 
-![](media/image50.png)
-
-<span id="_Toc11049914" class="anchor"></span>Code Example 26 Saving
-Alternative to XML
+<span id="_Toc11049914" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample26.png"/>
+  <br/>
+    Code Example 26 Saving Alternative to XML
+</p>
 
 As you can see, we utilized the saveDataLocations method provided by
 SelfContainedPluginAlt and the writeXMLFile method provided by
