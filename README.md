@@ -22,6 +22,6 @@ Develop USACE’s primary integration tool for engineering and water resources s
 
 - [Distributed Compute Configurations](DistributedComputeConfiguration.md)
 - [SDI Documentation](https://hydrologicengineeringcenter.github.io/SDI/)
-- [Draft plugin documentation](Plugin Documentation.7z)
+- [Draft plugin documentation](PluginDocumentation.md)
 - [Example WAT plugin](BasicPlugin.7z)
 
