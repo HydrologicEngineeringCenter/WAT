@@ -1114,31 +1114,38 @@ the project name be the same as the plug-in name you wish to use.
 To create a new NetBeans project launch NetBeans, and select **File \>
 NewProject…**
 
-![C:\\Users\\Q0HECWPL\\Documents\\WAT\\Plugin
-Documentation\\PluginDocumentation\\NewNetBeansProject.png](media/image14.png)
+<span id="_Toc11049866" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure12.png"/>
+  <br/>
+    Figure 12 Opening a New Netbeans Project
+</p>
 
-<span id="_Toc11049866" class="anchor"></span>Figure 12 Opening a New
-Project
 
 The new project wizard will appear and prompt you to define the project
 type. Within the Java category, select the project type
 **JavaApplication** and press **Next.**
 
-![C:\\Users\\Q0HECWPL\\Documents\\WAT\\Plugin
-Documentation\\PluginDocumentation\\NewJavaApplication.png](media/image15.png)
 
-<span id="_Toc11049867" class="anchor"></span>Figure 13 The New Project
-Wizard
+<span id="_Toc11049867" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure13.png"/>
+  <br/>
+    Figure 13 The New Project Wizard
+</p>
+
 
 Name the project, define its location, and name the main class for the
 project. It is recommended that a dedicated folder for storing libraries
 is created and named lib. Once this step has been completed select
 **Finish**.
 
-![](media/image16.png)
-
-<span id="_Toc11049868" class="anchor"></span>Figure 14 Creating a New
-Project
+<span id="_Toc11049868" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure14.png"/>
+  <br/>
+    Figure 14 Creating a New Netbeans Project
+</p>
 
 NetBeans will create a new project, a new package based on your project
 name, and a new main class based on the name you defined. Next, we will
@@ -1147,58 +1154,71 @@ add all required referenced jars to the lib folder.
 You should see something in the NetBeans IDE similar to the code shown
 below:
 
-![](media/image17.png)
-
-<span id="_Toc11049891" class="anchor"></span>Code Example 3
-MapperPlugin.java
+<span id="_Toc11049891" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/CodeExample3.png"/>
+  <br/>
+    Code Example 3 MapperPlugin.java
+</p>
 
 We need to add some reference jars located within the HEC-WAT directory
 under the jars folder. To add the jars, right click on the **Project**
 node in the Project pane, and select **Properties**.
 
-![](media/image18.png)
+<span id="_Toc11049869" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure15.png"/>
+  <br/>
+    Figure 15 The Properties Node
+</p>
 
-<span id="_Toc11049869" class="anchor"></span>Figure 15 The Properties
-Node
 
 The Properties Editor will appear. In the left-hand pane, select
 **Libraries** then click **Add Jar/Folder**.
 
-![](media/image19.png)
-
-<span id="_Toc11049870" class="anchor"></span>Figure 16 The Properties
-Editor
+<span id="_Toc11049870" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure16.png"/>
+  <br/>
+    Figure 16 The Properties Editor
+</p>
 
 Browse to HEC-WAT/jar and select the following jars:
 
 *hec.jar, hecnf.jar, hecnfPlugin.jar, rma.jar, rmadev.jar, watModel.jar
 and wat.jar.*
 
-![](media/image20.png)
-
-<span id="_Toc11049871" class="anchor"></span>Figure 17 Adding jars
+<span id="_Toc11049871" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure17.png"/>
+  <br/>
+    Figure 17 Adding jars
+</p>
 
 Click **Add Jar/Folder**, go into the sys folder and select
 *jdom-1.0.jar*.
 
-![C:\\Users\\Q0HECWPL\\Documents\\WAT\\Plugin
-Documentation\\PluginDocumentation\\addOneMoreJar.png](media/image21.png)
 
-<span id="_Toc11049872" class="anchor"></span>Figure 18 Selecting
-jdom-1.0.jar
+<span id="_Toc11049872" class="anchor"></span>
+
+<p align="center">
+  <img src="PluginDocumentationImages/Figure18.png"/>
+  <br/>
+    Figure 18 Selecting jdom-1.0.jar
+</p>
 
 Your Project’s properties should look like Figure 19.
 
-![](media/image22.png)
-
-<span id="_Ref5016528" class="anchor"></span>Figure 19 Project
-Properties with selected jars
+<span id="_Ref5016528" class="anchor"></span>
+<p align="center">
+  <img src="PluginDocumentationImages/Figure19.png"/>
+  <br/>
+    Figure 19 Project Properties with selected jars
+</p>
 
 This plug-in will extend AbstractPlugin from the hec2.plugin package and
 implement the hec2.wat.plugin.SimpleWatPlugin interface. After adding
 that to the class definition, the project should look like this:
-
-![](media/image23.png)
 
 <span id="_Toc11049892" class="anchor"></span>Code Example 4 Extending
 AbstractPlugin from the hec2.plugin Package
