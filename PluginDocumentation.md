@@ -2410,7 +2410,7 @@ This provides a list of all output variables trackable by this specific
 model alternative. In our case, it is just one value because there is
 only one DataLocation for this plug-in.
 
-boolean computeOutputVariables(list\<OutputVariable\>, ModelAlternative
+boolean computeOutputVariables(list\<OutputVariable\> list, ModelAlternative
 ma)
 
 This is where the output variable is set. If a user selects output
