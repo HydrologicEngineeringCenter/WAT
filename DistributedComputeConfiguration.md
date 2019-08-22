@@ -31,6 +31,7 @@ vmparam -DGridGainComputePlugin.configFile="C:\Programs\HEC-WAT\HEC-WAT\ignite\d
 #vmparam -Djava.rmi.server.hostname=127.0.0.1
 
 #for master node: uncomment (or add) the following line if this is master node
+
 vmparam -Dhec.rmi.server.NoClientSideProxies=true
 
 
