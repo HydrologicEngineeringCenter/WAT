@@ -29,6 +29,8 @@ vmparam -DGridGainComputePlugin.configFile="C:\Programs\HEC-WAT\HEC-WAT\ignite\d
 #for master node: comment out the following line if this is master node
 
 #vmparam -Djava.rmi.server.hostname=127.0.0.1
+#for master node: uncomment (or add) the following line if this is master node
+vmparam -Dhec.rmi.server.NoClientSideProxies=true
 
 
 Another alternative method is to use TcpDiscoverySpi – which allows for a static ip address for the master. In this configuration each compute node will broadcast back to a specified master ip address and port. This would be needed at Amazon to configure a different Discovery mechanism. 
