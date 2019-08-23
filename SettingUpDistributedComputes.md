@@ -5,13 +5,14 @@ There are a few steps to setting up a distributed compute that both the master a
 The first step is to download the ignite fabric and place it in C:\Programs\ignite.
 2. Download the jdk
 It is easiest to put the jdk in the same directory as the ignite fabric, I reccomend using C:\Programs\ignite\jdk
-
 A package that is already set up this way and can be extracted into C:\Programs\ignite is available for download here:
 
 3. Next, the computenode.bat file needs to be updated. There are three items that need to be set in the file based on the exact location of your programs
 
 set IGNITE_HOME=C:\Programs\ignite
+
 set JAVA_HOME=C:\Programs\ignite\jdk
+
 set WAT_HOME=C:\Programs\HEC-WAT\HEC-WAT\
 
 (the last one in the set should be the directory that the HEC-WAT.exe exists in, the enclosing HEC-WAT folder is where the Apps directory lives)
