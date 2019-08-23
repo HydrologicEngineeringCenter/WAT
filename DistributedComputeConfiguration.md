@@ -1,8 +1,11 @@
 **Distributed Computing Configurations:**
 
-There are many different configuration considerations when developing a distributed compute.
-Managing Multiple Masters with separable compute node grids:
-In order to have multiple masters compute on the same network each using a distinct mapping of compute nodes the following settings need to be changed in the default-config.xml file in the ignite directory packaged with WAT on the master node and each compute node. We recommend that the multi-cast options be utilized and that different port numbers be associated with each compute node grid and master pairing.
+There are many different configuration considerations when developing a distributed compute. The distributed compute can operate on a local area network or via cloud computing with AWS. Depending on the intended distributed compute environment the compute needs to be set up in one of the two following ways.
+
+
+Over a Local Area Network with targeted Master Node and Compute Node grid:
+In order to have multiple masters compute on the same network each using a distinct mapping of compute nodes the following settings need to be changed in the default-config.xml file in the ignite directory packaged with WAT on the master node and each compute node. We recommend that the multi-cast options be utilized and that different port numbers be associated with each compute node grid and master pairing. This ensures that if two modelers are trying to distribute computes on the same network the computes will not conflict with one another.
+
 In order to multi cast multiple distributed computes on the same network you must use these settings in the default-config.xml file on the master and compute nodes:
 ```
 <property name="deploymentMode" value="SHARED"/>
@@ -34,7 +37,7 @@ vmparam -DGridGainComputePlugin.configFile="C:\Programs\HEC-WAT\HEC-WAT\ignite\d
 
 vmparam -Dhec.rmi.server.NoClientSideProxies=true
 
-
+Distributing with AWS compute services:
 Another alternative method is to use TcpDiscoverySpi – which allows for a static ip address for the master. In this configuration each compute node will broadcast back to a specified master ip address and port. This would be needed at Amazon to configure a different Discovery mechanism. 
 ```
   <property name="deploymentMode" value="SHARED"/>
