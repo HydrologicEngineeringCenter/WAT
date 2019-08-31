@@ -27,5 +27,5 @@ Develop USACE’s primary integration tool for engineering and water resources s
 - [SDI Documentation](https://hydrologicengineeringcenter.github.io/SDI/)
 - [Continuous Simulation in Hydrologic Sampler](HydrologicSampler.md)
 - [Plugin documentation (programmers guide)](PluginDocumentation.md)
-- [Example WAT plugin](BasicPlugin.7z)
+- [Example WAT plugin](https://github.com/HydrologicEngineeringCenter/BasicPlugin)
 
