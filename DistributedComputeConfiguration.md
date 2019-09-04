@@ -37,6 +37,10 @@ vmparam -DGridGainComputePlugin.configFile="C:\Programs\HEC-WAT\HEC-WAT\ignite\d
 
 vmparam -Dhec.rmi.server.NoClientSideProxies=true
 
+#for all compute nodes: uncomment (or add) the following line (This applies to builds after 1.1.0.167
+vmparam -DignoreRestartFile=true
+This particular -d flag is important because it causes all sorts of difficult to diagnose issues in a distributed compute.
+
 Distributing with AWS compute services:
 Another alternative method is to use TcpDiscoverySpi – which allows for a static ip address for the master. In this configuration each compute node will broadcast back to a specified master ip address and port. This would be needed at Amazon to configure a different Discovery mechanism. 
 ```
