@@ -5,11 +5,11 @@ The Hydrologic Engineering Center's Watershed Analysis Tool (HEC-WAT)
 
 **Mission**
 
-To provide a water resources tool that integrates engineering and consequence software to support a wide range of USACE applications, including watershed and systems based risk analysis.
+To provide a water resources tool that integrates engineering and consequence software to support a wide range of water resources applications, including watershed and systems based risk analysis.
 
 **Vision**
 
-Develop USACE’s primary integration tool for engineering and water resources studies.
+Develop the primary integration tool for engineering and water resources studies.
 
 **Goals**
 - To provide an excellent user experience
